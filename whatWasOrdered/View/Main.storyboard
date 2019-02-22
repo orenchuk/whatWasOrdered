@@ -77,5 +77,63 @@
             </objects>
             <point key="canvasLocation" x="959" y="23"/>
         </scene>
+        <!--Order View Controller-->
+        <scene sceneID="iQh-3x-1b3">
+            <objects>
+                <viewController id="9P3-ta-pS9" customClass="OrderViewController" customModule="whatWasOrdered" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p5Q-er-KYM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BDt-LK-b76">
+                                <rect key="frame" x="25" y="244" width="325" height="324"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCn-gO-YLi">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="73.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKs-RE-SvX">
+                                        <rect key="frame" x="0.0" y="83.666666666666686" width="325" height="73.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj2-N6-taZ">
+                                        <rect key="frame" x="0.0" y="167" width="325" height="73.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-d9-I20">
+                                        <rect key="frame" x="0.0" y="250.66666666666671" width="325" height="73.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BDt-LK-b76" firstAttribute="centerY" secondItem="p5Q-er-KYM" secondAttribute="centerY" id="9vQ-By-316"/>
+                            <constraint firstItem="BDt-LK-b76" firstAttribute="top" secondItem="TbQ-iY-3lF" secondAttribute="top" constant="200" id="PXM-HA-OoT"/>
+                            <constraint firstItem="TbQ-iY-3lF" firstAttribute="trailing" secondItem="BDt-LK-b76" secondAttribute="trailing" constant="25" id="PnH-EA-a7s"/>
+                            <constraint firstItem="BDt-LK-b76" firstAttribute="leading" secondItem="TbQ-iY-3lF" secondAttribute="leading" constant="25" id="X3d-hW-W9w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TbQ-iY-3lF"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainDishLabel" destination="mj2-N6-taZ" id="X3m-b1-4Jk"/>
+                        <outlet property="salatLabel" destination="qCn-gO-YLi" id="42Z-HW-bIj"/>
+                        <outlet property="sideDishLabel" destination="1zy-d9-I20" id="TDv-yh-isB"/>
+                        <outlet property="soupLabel" destination="TKs-RE-SvX" id="d5J-mW-zkS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wD0-6s-7k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1823" y="23"/>
+        </scene>
     </scenes>
 </document>

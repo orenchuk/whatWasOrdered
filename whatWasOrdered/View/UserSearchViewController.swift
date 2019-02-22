@@ -22,6 +22,8 @@ class UserSearchViewController: UIViewController {
             usernameLabel.text = "Hi, " + newValue
         }
     }
+    
+    private var sheetFetcher: SpreadsheetValues!
 
     // MARK: Outlets
     
@@ -37,32 +39,24 @@ class UserSearchViewController: UIViewController {
         usernameInput.isHidden = true
         usernameInput.delegate = self
         
+        if let service = service {
+            sheetFetcher = SpreadsheetValues(service: service)
+        }
+        
         if let name = user?.profile.name {
             username = name
         }
         
-        fetchUsers()
+        fetchUsers(range: "Понедельник !A3:A43")
         checkUserExist(name: username, users: usersList)
     }
     
-    private func fetchUsers() {
-        let spreadsheetId = "1NrPDjp80_7venKB0OsIqZLrq47jbx9c-lrWILYJPS88"
-        let range = "Понедельник !A3:A43"
-        let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range: range)
-        query.majorDimension = "COLUMNS"
-        
-        if let service = service {
-            service.executeQuery(query) { (serviceTicket, response, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    let result = response as? GTLRSheets_ValueRange
-                    if let users = result?.values?.first as? [String] {
-                        self.usersList = users
-                    }
-                }
+    private func fetchUsers(range: String) {
+        sheetFetcher.fetchValues(range: range, majorDimension: "COLUMNS", complitionHandler: { result in
+            if let users = result?.values?.first as? [String] {
+                self.usersList = users
             }
-        }
+        })
     }
     
     private func checkUserExist(name: String, users: [String]) {
